@@ -1,16 +1,22 @@
 import React from 'react';
 import { Button, Space, DatePicker, version } from 'antd';
 
-const App = () => (
-  <div style={{ padding: '0 24px' }}>
-    <h1>antd version: {version}</h1>
-    <Space>
-      <DatePicker />
-      <Button type="link" href="https://www.google.com">
-        Primary Button
-      </Button>
-    </Space>
-  </div>
-);
+const App = () => {
+  const onButtonClick = (e) => {
+    console.log('click');
+  };
+
+  return (
+    <div style={{ padding: '0 24px' }}>
+      <h1>antd version: {version}</h1>
+      <Space>
+        {/* <DatePicker /> */}
+        <Button type="primary" block onClick={onButtonClick}>
+          Primary Button
+        </Button>
+      </Space>
+    </div>
+  );
+};
 
 export default App;
