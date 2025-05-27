@@ -6,7 +6,9 @@ const App = () => (
     <h1>antd version: {version}</h1>
     <Space>
       <DatePicker />
-      <Button type="primary">Primary Button</Button>
+      <Button type="link" href="https://www.google.com">
+        Primary Button
+      </Button>
     </Space>
   </div>
 );
