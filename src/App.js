@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PoweroffOutlined, SyncOutlined } from '@ant-design/icons';
-import { Button, Space, DatePicker, version } from 'antd';
+import { Input, Button, Space, DatePicker, version } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -14,22 +15,14 @@ const App = () => {
   };
 
   return (
-    <div style={{ padding: '0 24px' }}>
-      <h1>antd version: {version}</h1>
-      <Space>
-        {/* <DatePicker /> */}
-        <Button
-          type="primary"
-          block
-          onClick={onButtonClick}
-          loading={loading}
-          className="primary-button"
-          icon={<PoweroffOutlined />}
-          style={{ backgroundColor: 'skyBlue' }}
-        >
-          Primary Button
-        </Button>
-      </Space>
+    <div style={{ padding: '24px' }}>
+      <Input.Search
+        placeholder="password"
+        maxLength={10}
+        type="password"
+        prefix={<UserOutlined />}
+        allowClear
+      />
     </div>
   );
 };
