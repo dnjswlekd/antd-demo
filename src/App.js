@@ -1,26 +1,23 @@
 import React, { useState } from 'react';
 import { PoweroffOutlined, SyncOutlined } from '@ant-design/icons';
-import { Input, Button, Space, DatePicker, version } from 'antd';
+import { Select, Input, Button, Space, DatePicker, version } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 
 const App = () => {
-  const [loading, setLoading] = useState(false);
+  const fruits = ['banana', 'apple', 'orange', 'mango'];
 
-  const onButtonClick = (e) => {
-    console.log('click');
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  };
+  const options = fruits.map((fruit) => ({
+    label: fruit,
+    value: fruit,
+  }));
 
   return (
     <div style={{ padding: '24px' }}>
-      <Input.Search
-        placeholder="password"
-        maxLength={10}
-        type="password"
-        prefix={<UserOutlined />}
+      <Select
+        mode="multiple"
+        placeholder="what are you favorite fruits?"
+        style={{ width: 170 }}
+        options={options}
         allowClear
       />
     </div>
